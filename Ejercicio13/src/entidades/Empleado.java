@@ -17,7 +17,5 @@ public abstract class Empleado {
 		this.sueldoBase = sueldoBase;
 	}
 	
-	public double sueldoFinal() {
-		return 0;
-	}
+	public abstract double sueldoFinal();
 }
