@@ -20,6 +20,7 @@ public class GestorCoche{
 			
 		} else if(this.daoC.buscarmatricula(c.getMatricula()) != null) {
 			if(c.getMatricula() == this.daoC.buscarmatricula(c.getMatricula()).getMatricula()) {
+				System.out.println("Misma matricula!");
 				return false;
 			}
 			

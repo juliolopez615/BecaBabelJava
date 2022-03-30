@@ -3,7 +3,7 @@ package modelo.entidad;
 public class Coche {
 	
 	//Atributos
-	private int id = 0;
+	private int id = -1;
 	private int matricula;
 	private String marca;
 	private String modelo;
@@ -58,7 +58,7 @@ public class Coche {
 	//Tostring
 	@Override
 	public String toString() {
-		return "Coche [matricula=" + matricula + ", marca=" + marca + ", modelo=" + modelo
+		return "Coche [id=" + id + ", matricula=" + matricula + ", marca=" + marca + ", modelo=" + modelo
 				+ ", kilometros=" + kilometros + "]";
 	}
 }

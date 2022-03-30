@@ -20,7 +20,7 @@ public class DaoCoche implements DaoCocheInterfaz {
 		String password = "";
 		try {
 			conexion = DriverManager.getConnection(url,usuario,password);
-			System.out.println("Se ha realizado la conexion");
+			
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -32,7 +32,7 @@ public class DaoCoche implements DaoCocheInterfaz {
 	public boolean cerrarConexion(){
 		try {
 			conexion.close();
-			System.out.println("Se ha cerrado la conexion");
+			
 		} catch (SQLException e) {
 			e.printStackTrace();
 			return false;
@@ -105,7 +105,7 @@ public class DaoCoche implements DaoCocheInterfaz {
 			return false;
 		}
 		boolean modificado = true;
-		String query = "update choche set MATRICULA=?, MARCA=?, "
+		String query = "update coche set MATRICULA=?, MARCA=?, "
 				+ "MODELO=?, KILOMETROS=? WHERE ID=?";
 		
 		try {
@@ -114,6 +114,7 @@ public class DaoCoche implements DaoCocheInterfaz {
 			ps.setString(2, c.getMarca());
 			ps.setString(3, c.getModelo());
 			ps.setInt(4, c.getKilometros());
+			ps.setInt(5, c.getId());
 			
 			int numeroFilasAfectadas = ps.executeUpdate();
 			if(numeroFilasAfectadas == 0)
