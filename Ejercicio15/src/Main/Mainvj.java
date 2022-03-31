@@ -63,7 +63,7 @@ public class Mainvj {
 				}
 			}
 			
-			//Todos los turnos arma nueva!
+			//Todos los turnos arma nueva a partir del 6!
 			if(contador > 4) {
 				arlist = combate.creararma();
 				
