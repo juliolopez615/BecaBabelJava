@@ -46,7 +46,7 @@ public class Mainvj {
 			
 			System.out.println("Vida del JUGADOR 1: " + pj1.getNombre() + ": " + pj1.getVida() + "  Arma: " + pj1.getArma());
 			System.out.println("Vida del JUGADOR 2: " + pj2.getNombre() + ": " + pj2.getVida() + "  Arma: " + pj2.getArma());
-			
+			System.out.println("\n");
 			if(turno) {
 				pj2 = combate.combatir(pj1, pj2);
 			}else {
@@ -55,10 +55,10 @@ public class Mainvj {
 			
 			if(pj1.getVida() <=0 || pj2.getVida() <= 0) {
 				if(pj1.getVida() <=0) {
-					System.out.println("GANADOR JUGADOR 2: " + pj2.getNombre());
+					System.out.println("\nGANADOR JUGADOR 2: " + pj2.getNombre());
 					flag = false;
 				}else {
-					System.out.println("GANADOR JUGADOR 1: " + pj1.getNombre());
+					System.out.println("\nGANADOR JUGADOR 1: " + pj1.getNombre());
 					flag = false;
 				}
 			}
