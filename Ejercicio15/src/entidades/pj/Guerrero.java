@@ -11,6 +11,10 @@ import entidades.armas.Rezo;
 public class Guerrero extends Personaje{
 	private int fuerza = 0;
 	
+	/**
+	 * Se setea el atributo fuerza y el daño base con un random. La fuerza luego será aumentada si se usa
+	 * una espada en el ataque. Se añade tambien la vida y el nombre, que serán constantes.
+	 */
 	public Guerrero() {
 		Random rand = new Random(); 
 	    int topefuerza = 16;
@@ -62,7 +66,11 @@ public class Guerrero extends Personaje{
 		}
 		
 	}
-
+	
+	/**
+	 * Opcion para que el personaje escape en caso de que vaya perdiendo o esté a punto de morir
+	 * Aun no se si lo voy a implementar pero de momento ahi queda
+	 */
 	@Override
 	public boolean escapar() {
 		Random rand = new Random();

@@ -1,17 +1,11 @@
 package Main;
 
-
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
 import entidades.armas.Arco;
 import entidades.armas.Arma;
-import entidades.armas.Espada;
-import entidades.pj.Guerrero;
-import entidades.pj.Mago;
 import entidades.pj.Personaje;
-import entidades.pj.Priest;
 import gestor.Gestor;
 
 public class Mainvj {
