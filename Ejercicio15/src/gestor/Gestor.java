@@ -30,7 +30,6 @@ public class Gestor {
 		for(int i=0; i<2; i++) {
 			
 			clase = rand.nextInt(13);
-			System.out.println(clase);
 			if(clase > 0 && clase <= 3) {
 				if(i == 0) {
 					ar1 = new Arco();
@@ -59,7 +58,6 @@ public class Gestor {
 				}
 				
 			}else {
-				System.out.println("Wtf");
 				i--;
 				continue;
 			}

@@ -41,8 +41,11 @@ public class Mainvj {
 		}
 		
 		while(flag) {
-			System.out.println("-------------------------------------------------------------------");
+			System.out.println("\n+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
 			System.out.println("\nTurno " + contador + "\n");
+			
+			System.out.println("Vida del JUGADOR 1: " + pj1.getNombre() + ": " + pj1.getVida() + "  Arma: " + pj1.getArma());
+			System.out.println("Vida del JUGADOR 2: " + pj2.getNombre() + ": " + pj2.getVida() + "  Arma: " + pj2.getArma());
 			
 			if(turno) {
 				pj2 = combate.combatir(pj1, pj2);
@@ -60,11 +63,28 @@ public class Mainvj {
 				}
 			}
 			
-			Thread.sleep(4000);
+			//Todos los turnos arma nueva!
+			if(contador > 4) {
+				arlist = combate.creararma();
+				
+				pj1 = pjlist.get(0);
+				pj1.setArma(arlist.get(0));
+				
+				pj2 = pjlist.get(1);
+				pj2.setArma(arlist.get(1));
+			}
+			
+			
+			System.out.println("-------------------------------------------------------------------");
+			
 			turno = !turno;
 			contador++;
-			System.out.println("-------------------------------------------------------------------");
+			Thread.sleep(4000);
+			
 		}
+		
+		System.out.println("Vida del JUGADOR 1: " + pj1.getNombre() + ": " + pj1.getVida() + "  Arma: " + pj1.getArma());
+		System.out.println("Vida del JUGADOR 2: " + pj2.getNombre() + ": " + pj2.getVida() + "  Arma: " + pj2.getArma());
 		
 		System.out.println("\n\nFIN DEL JUEGO");
 
