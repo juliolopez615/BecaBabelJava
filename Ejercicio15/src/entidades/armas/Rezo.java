@@ -1,5 +1,7 @@
 package entidades.armas;
 
+import java.util.Random;
+
 public class Rezo extends Arma{
 
 	public Rezo() {
@@ -9,14 +11,15 @@ public class Rezo extends Arma{
 	
 	@Override
 	public int usar() {
+		Random rand = new Random();
 		System.out.println("AAAaaAAA ~Sonido canticos sagrados~ AAAaaaAAA");
-		this.setDanio(11);
+		this.setDanio(rand.nextInt(20));
 		return this.getDanio();
 	}
 	
 	@Override
 	public String toString() {
-		return "Arco [getNombre()=" + getNombre() + "]";
+		return "["+ getNombre() + "]";
 	}
 	
 

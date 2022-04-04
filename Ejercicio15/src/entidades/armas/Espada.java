@@ -1,5 +1,6 @@
 package entidades.armas;
 
+import java.util.Random;
 
 public class Espada extends Arma{
 	
@@ -9,14 +10,15 @@ public class Espada extends Arma{
 
 	@Override
 	public int usar() {
+		Random rand = new Random();
 		System.out.println("FVII ~El sonido cortó el aire ~ FVII");
-		this.setDanio(10);
+		this.setDanio(rand.nextInt(24));
 		return this.getDanio();
 	}
 	
 	@Override
 	public String toString() {
-		return "Arco [getNombre()=" + getNombre() + "]";
+		return "["+ getNombre() + "]";
 	}
 	
 }

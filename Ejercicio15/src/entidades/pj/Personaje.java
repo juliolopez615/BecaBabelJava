@@ -1,5 +1,7 @@
 package entidades.pj;
 
+import java.util.Random;
+
 import entidades.armas.Arma;
 
 public abstract class Personaje {
@@ -9,12 +11,6 @@ public abstract class Personaje {
 	private Arma arma;
 	
 	public abstract int atacar();
-	
-	public abstract void restarVida(int danio);
-	
-	public abstract boolean escapar();
-	
-	public abstract void cambiarArma(Arma arma);
 	
 	public abstract void taunt();
 
@@ -49,6 +45,31 @@ public abstract class Personaje {
 
 	public void setDanioBase(int danioBase) {
 		this.danioBase = danioBase;
+	}
+	
+	
+	public void restarVida(int danio) {
+		this.setVida(this.getVida() - danio);
+	}
+	
+	public void cambiarArma(Arma arma) {
+		this.setArma(arma);		
+	}
+	
+	public boolean escapar() {
+		Random rand = new Random();
+		int numero = rand.nextInt(101);
+		int escapar = 0;
+		
+		for(int i = 0; i < 10; i++) {
+			escapar = rand.nextInt(101);
+			if(escapar == numero) {
+				return true;
+			}
+		}
+		
+		return false;
+		
 	}
 
 }

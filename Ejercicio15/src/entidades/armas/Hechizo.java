@@ -1,5 +1,7 @@
 package entidades.armas;
 
+import java.util.Random;
+
 public class Hechizo extends Arma{
 
 	
@@ -9,14 +11,15 @@ public class Hechizo extends Arma{
 	
 	@Override
 	public int usar() {
+		Random rand = new Random();
 		System.out.println("chisp ~Sonido de pequeñas chispas ~ chisp");
-		this.setDanio(10);
+		this.setDanio(rand.nextInt(22));
 		return this.getDanio();
 	}
 	
 	@Override
 	public String toString() {
-		return "Arco [getNombre()=" + getNombre() + "]";
+		return "["+ getNombre() + "]";
 	}
 	
 

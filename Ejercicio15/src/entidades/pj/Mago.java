@@ -60,38 +60,11 @@ public class Mago extends Personaje{
 		
 	}
 
-	@Override
-	public boolean escapar() {
-		Random rand = new Random();
-		int numero = rand.nextInt(101);
-		int escapar = 0;
-		
-		for(int i = 0; i < 10; i++) {
-			escapar = rand.nextInt(101);
-			if(escapar == numero) {
-				return true;
-			}
-		}
-		
-		return false;
-		
-	}
-
-
-	@Override
-	public void cambiarArma(Arma arma) {
-		this.setArma(arma);		
-	}
 
 	@Override
 	public void taunt() {
 		System.out.println("Por el poder del fuego y la tierra YO te daré caza!");
 		
-	}
-
-	@Override
-	public void restarVida(int danio) {
-		this.setVida(this.getVida() - danio);
 	}
 
 	@Override
