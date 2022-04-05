@@ -10,6 +10,7 @@ import entidades.armas.Arma;
 import entidades.armas.Espada;
 import entidades.armas.Hechizo;
 import entidades.armas.Rezo;
+import entidades.pj.Boss;
 import entidades.pj.Guerrero;
 import entidades.pj.Mago;
 import entidades.pj.Personaje;
@@ -17,8 +18,13 @@ import entidades.pj.Priest;
 
 public class Gestor {
 	private Personaje pj1;
-	private Personaje pj2;
-
+	private Boss pj2;
+	
+	public Gestor() {
+		this.pj2 = new Boss();
+		List<Arma> arlist = this.creararma();
+		pj2.setArma(arlist.get(0));
+	}
 	public Personaje getPj1() {
 		return pj1;
 	}
@@ -27,11 +33,11 @@ public class Gestor {
 		this.pj1 = pj1;
 	}
 
-	public Personaje getPj2() {
+	public Boss getPj2() {
 		return pj2;
 	}
 
-	public void setPj2(Personaje pj2) {
+	public void setPj2(Boss pj2) {
 		this.pj2 = pj2;
 	}
 
@@ -44,9 +50,14 @@ public class Gestor {
 	 * se implementará en el ejercicio 17.
 	 * 
 	 */
-	public Personaje combatir(Personaje pj1, Personaje pj2) {
+	public synchronized int combatir(Personaje pj1) {
+		//Parecido al caso base.
+		if(this.pj2.getVida() <= 0) {
+			System.out.println("Oiba, algún genio ya se ha cargado al jefe. Me quedo sin Cobrar :(");
+			return -1;
+		}
+		
 		this.pj1 = pj1;
-		this.pj2 = pj2;
 		List<Arma> arlist;
 		Scanner sc = new Scanner(System.in);
 		Random rand = new Random();
@@ -87,14 +98,15 @@ public class Gestor {
 					System.out.println("Vida del JUGADOR 1: " + pj1.getNombre() + ": " + pj1.getVida() + "  Arma: " + pj1.getArma());
 					System.out.println("Vida del JUGADOR 2: " + pj2.getNombre() + ": " + pj2.getVida() + "  Arma: " + pj2.getArma());
 					sc.close();
-					return pj2;
+					return 0;
+		
 				}else {
 					System.out.println("\nGANADOR JUGADOR 1: " + pj1.getNombre());
 					
 					System.out.println("Vida del JUGADOR 1: " + pj1.getNombre() + ": " + pj1.getVida() + "  Arma: " + pj1.getArma());
 					System.out.println("Vida del JUGADOR 2: " + pj2.getNombre() + ": " + pj2.getVida() + "  Arma: " + pj2.getArma());
 					sc.close();
-					return pj1;
+					return 1;
 				}
 			}
 			
@@ -120,14 +132,19 @@ public class Gestor {
 			turno = !turno;
 			contador++;
 			
-			sc.nextLine();
+			try {
+				Thread.sleep(1000);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 			
 		}
 		
 		System.out.println("Vida del JUGADOR 1: " + pj1.getNombre() + ": " + pj1.getVida() + "  Arma: " + pj1.getArma());
 		System.out.println("Vida del JUGADOR 2: " + pj2.getNombre() + ": " + pj2.getVida() + "  Arma: " + pj2.getArma());
 		sc.close();
-		return null;
+		return 0;
 	}
 	
 	public List<Arma> creararma(){
