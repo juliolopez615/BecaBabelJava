@@ -1,0 +1,23 @@
+[
+  {
+    "id": 3,
+    "matricula": 1245783,
+    "marca": "suzuki",
+    "modelo": "swift",
+    "kilometros": 16000
+  },
+  {
+    "id": 4,
+    "matricula": 1234568,
+    "marca": "citroen",
+    "modelo": "cactus",
+    "kilometros": 11000
+  },
+  {
+    "id": 5,
+    "matricula": 1234569,
+    "marca": "citroen",
+    "modelo": "cactus",
+    "kilometros": 12000
+  }
+]
