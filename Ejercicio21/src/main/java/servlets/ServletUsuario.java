@@ -42,6 +42,8 @@ protected void doGet(HttpServletRequest request, HttpServletResponse response) t
 		out = response.getWriter();
         response.setContentType("application/json");
         response.setCharacterEncoding("UTF-8");
+        //nos llaman desde distintos dominiios
+        response.addHeader("Access-Control-Allow-Origin", "*");
 		
 		user = dao.buscar(usuario);
 		

@@ -56,7 +56,7 @@ public class Main {
 			
 			if(contador > 2) {
 				System.out.println("Se agotaron los intentos");
-				op = 11;
+				op = 11;                               
 			}
 		}
 		
